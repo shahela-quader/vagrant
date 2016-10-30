@@ -13,6 +13,11 @@ yum install -y httpd httpd-devel httpd-tools
 chkconfig  httpd on
 service httpd stop
 
+# iptable stop
+service iptables stop
+chkconfig iptables off
+
+# create soft link
 rm -rf  /var/www/html
 ln -s /vagrant  /var/www/html
 service httpd start
